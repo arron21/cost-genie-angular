@@ -20,5 +20,9 @@ export const routes: Routes = [
     }, {
         path: 'add-expense',
         loadComponent: () => import('./components/add-expense/add-expense.component').then(m => m.AddExpenseComponent)
+    },
+    {
+        path: 'debt-payoff',
+        loadComponent: () => import('./components/debt-payoff/debt-payoff.component').then(m => m.DebtPayoffComponent)
     }
 ];

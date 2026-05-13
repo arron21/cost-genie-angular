@@ -1,10 +1,11 @@
 import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
 import { CurrencyPipe, PercentPipe } from '@angular/common';
 import { DatabaseService, Expense } from '../../services/database.service';
+import { InvestmentPotentialComponent } from '../investment-potential/investment-potential.component';
 
 @Component({
   selector: 'app-summary',
-  imports: [CurrencyPipe, PercentPipe],
+  imports: [CurrencyPipe, PercentPipe, InvestmentPotentialComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section aria-labelledby="summary-heading">
@@ -30,6 +31,8 @@ import { DatabaseService, Expense } from '../../services/database.service';
             <li>Great job! Your budget looks well-balanced according to the 50/30/20 rule.</li>
           }
         </ul>
+
+        <app-investment-potential [balance]="balance()" />
       </article>
     </section>
   `,

@@ -11,6 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         <li><a routerLink="/income" routerLinkActive="active">Income</a></li>
         <li><a routerLink="/expenses" routerLinkActive="active">Expenses</a></li>
         <li><a routerLink="/summary" routerLinkActive="active">Summary</a></li>
+        <li><a routerLink="/debt-payoff" routerLinkActive="active">Debt Payoff</a></li>
       </ul>
     </nav>
   `

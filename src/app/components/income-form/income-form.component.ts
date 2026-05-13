@@ -11,6 +11,8 @@ import { DatabaseService } from '../../services/database.service';
     <div class="income-form-container">
       <h2>Monthly Income Setup</h2>
       <form [formGroup]="incomeForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <legend>Enter Income</legend>
         <div class="form-group">
           <label for="monthlyIncome">Monthly Income:</label>
           <input 
@@ -22,6 +24,7 @@ import { DatabaseService } from '../../services/database.service';
           />
         </div>
         <button type="submit" [disabled]="incomeForm.invalid">Save</button>
+        </fieldset>
       </form>
       
       @if (savedIncome() !== null) {
@@ -30,41 +33,7 @@ import { DatabaseService } from '../../services/database.service';
     </div>
   `,
   styles: [`
-    .income-form-container {
-      max-width: 400px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    .form-group {
-      margin-bottom: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    input {
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      padding: 0.5rem 1rem;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-    .success-msg {
-      margin-top: 1rem;
-      color: #28a745;
-      font-weight: 500;
-    }
+   
   `]
 })
 export class IncomeFormComponent {
